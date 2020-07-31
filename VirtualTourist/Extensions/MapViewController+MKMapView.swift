@@ -55,8 +55,8 @@ extension MapViewController: MKMapViewDelegate {
                 let pindata = try dataController.fetchLocation(predicate)!
                 let annotationPin = AnnotationPin(pin: pindata)
                 self.performSegue(withIdentifier: K.showPhotoAlbumSegueId, sender: annotationPin)
-            } catch {
-                print("There was an error!!")
+            } catch let error {
+                print("There was an error: \(error.localizedDescription)")
             }
         }
     }

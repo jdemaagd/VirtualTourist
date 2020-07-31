@@ -84,10 +84,21 @@ class MapViewController: UIViewController {
     @IBAction func longPressOnMap(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             messageLabel.text = "put finger to add pin"
-        } else if sender.state == .ended {
+        } else if sender.state == .changed {
+            // TODO: update
+            messageLabel.text = ""
+        }
+        else if sender.state == .ended {
             let locationCoordinate = mapView.convert(sender.location(in: mapView), toCoordinateFrom: mapView)
             messageLabel.text = "long press to add new location"
             saveGeoCoordination(from: locationCoordinate)
         }
     }
+
+    // Also, you can support the dragging of the pins by utilizing all the UIGestureRecognizer states.
+    //Do the following for each state:
+
+    //On state .began, the pin will be created.
+    //On .changed, At this point, you update the first pin coordinates to change the position of the pin
+    //On .ended, In this state, the user has lifted a finger and you are free to persist the pin.
 }

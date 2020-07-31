@@ -17,11 +17,11 @@ struct FlickrPhoto: Codable {
     let url: String
     
     let farm: Int
-    let height: Int
+    let height: Int?
     let isFamily: Int
     let isFriend: Int
     let isPublic: Int
-    let width: Int
+    let width: Int?
  
     enum CodingKeys: String, CodingKey {
         case id, owner, secret, server, title

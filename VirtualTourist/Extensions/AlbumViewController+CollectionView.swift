@@ -18,6 +18,8 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         collectionView.allowsMultipleSelection = true
         configureFlowLayout()
     }
+    // Consider using Access Modifiers here :D They enable you to hide the implementation details of your code and to specify a preferred interface through which that code can be accessed and used.
+    
 
     func configureFlowLayout() {
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {

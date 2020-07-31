@@ -97,7 +97,6 @@ class AlbumViewController: UIViewController {
                     }
                 }
                 
-            self.activityIndicator.isHidden = true
             self.activityIndicator.stopAnimating()
         }
     }
